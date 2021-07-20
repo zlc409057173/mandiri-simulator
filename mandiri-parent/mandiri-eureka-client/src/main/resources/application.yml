@@ -1,0 +1,13 @@
+server:
+  port: 8503
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8501/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 10 #接收心跳的最大超时时间  默认90s
+    lease-renewal-interval-in-seconds: 5 #发送一个心跳的间隔时间  默认30s
+spring:
+  application:
+    name: EUREKACLIENT
