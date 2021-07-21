@@ -8,3 +8,15 @@ spring:
     consul:
       port: 8500
       host: localhost
+    gateway:
+      enabled: true
+      routes:
+        - id: simulator #路由对象唯一标识
+          uri: http://localhost:8081 #类别服务地址
+          predicates:
+            - Path=/simulator,/WebserviceSWF/**
+
+        - id: user #路由对象唯一标识
+          uri: http://localhost:8082 #类别服务地址
+          predicates:
+            - Path=/user
