@@ -12,11 +12,18 @@ spring:
       enabled: true
       routes:
         - id: simulator #路由对象唯一标识
-          uri: http://localhost:8081 #类别服务地址
+          uri: lb://SIMULATOR #类别服务地址
           predicates:
-            - Path=/simulator,/WebserviceSWF/**
-
+            - Path=/simulatorService/**
+#            - After=2021-07-22T21:12:03.042+08:00[Asia/Shanghai]
+#            - Before=2021-07-22T21:12:03.042+08:00[Asia/Shanghai]
+            - Between=2021-07-22T21:12:03.042+08:00[Asia/Shanghai], 2022-07-22T21:12:03.042+08:00[Asia/Shanghai]
+          filters:
+            - StripPrefix=1
         - id: user #路由对象唯一标识
-          uri: http://localhost:8082 #类别服务地址
+          uri: lb://USER #类别服务地址
           predicates:
-            - Path=/user
+            - Path=/userService/**
+            - After=2021-07-22T21:34:00.042+08:00[Asia/Shanghai]
+          -filters:
+            - StripPrefix=1

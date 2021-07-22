@@ -1,10 +1,12 @@
 package com.clear2pay.response;
 
+import com.alibaba.fastjson.annotation.JSONType;
 import com.clear2pay.response.error.CommonError;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@JSONType(orders = {"status","data"})
 public class CommonReturnType {
 
     //表明对应请求的返回处理结果"success" 和 "fail"
