@@ -27,3 +27,11 @@ spring:
             - After=2021-07-22T21:34:00.042+08:00[Asia/Shanghai]
           -filters:
             - StripPrefix=1
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
