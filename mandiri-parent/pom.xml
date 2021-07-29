@@ -18,6 +18,7 @@
         <module>mandiri-hystrix-dashboard</module>
         <module>mandiri-eureka-service</module>
         <module>mandiri-eureka-client</module>
+        <module>mandiri-config-service</module>
     </modules>
 
 
@@ -101,6 +102,11 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
                 <version>${eruka.server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
